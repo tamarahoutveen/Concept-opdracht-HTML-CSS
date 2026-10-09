@@ -1,0 +1,449 @@
+/*////////////////////////
+    Table of Contents
+    1. Global Styles
+    2. Typography
+    3. Layout
+        3.1 Reusables
+        3.2 Other
+    4. Areas
+        4.1 Header
+        4.2 Introduction
+        etc.
+    5. Media Queries
+////////////////////////*/
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:opsz,wght@18..144,300..900&family=Roboto:wght@100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-purple: #5722CD;
+    --color-blue: #4845E4;
+    --color-pink: #ED4385;
+    --color-black: #0C0C0C;
+    --color-lilac: #F2F0FF;
+    --color-lightgray: #F3F6F9;
+    --color-gray: #7A7A7A;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* ------------------------------- 1. Global Styles -------------------------------- */
+
+/* ------------------------------- 2. Typography ----------------------------------- */
+
+body {
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    color: var(--color-black);
+    font-size: 15px;
+    line-height: 1.2;
+    font-weight: 300;
+}
+
+h1, h2, h3 {
+    font-family: "Merriweather", serif;
+}
+
+h1 {
+    font-size: 1.6rem;
+}
+
+h2 {
+    font-size: 1.28rem;
+    color: var(--color-purple);
+    line-height: 1.2;
+}
+
+h3 {
+    color: var(--color-purple);
+    font-size: 1.4rem;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-purple);
+}
+
+button {
+    background: var(--color-pink);
+    border: none;
+    padding: 22px 32px;
+    color: #fff;
+    font-size: 0.625rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 30px;
+    box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+/* ------------------------------- 3. Layout --------------------------------------- */
+
+/* --------------- 3.1 Reusables ----------------------- */
+
+.inner-container {
+    padding: 90px 20px;
+}
+
+.image-wrapper {
+    width: 100%;
+    overflow: hidden;
+}
+
+/* --------------- 3.2 Other --------------------------- */
+
+.hello::before, .work::before, .services::before, .services::after{
+    content: "";
+    position: absolute;
+    top: -30px;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 100vw 30px 0;
+    border-color: transparent transparent #fff transparent;
+}
+.services::after{
+    top:auto;
+    bottom:-30px;
+    border-width: 30px 0 0 100vw;
+    border-color: #fff transparent transparent  transparent;
+}
+.work::before{
+    border-color: transparent transparent var(--color-lightgray) transparent;
+}
+
+/* ------------------------------- 4. Areas ---------------------------------------- */
+
+/* --------------- 4.1 Header ------------------------- */
+
+.top-header {
+    background: var(--color-purple);
+    background: url('assets/noise-texture.png'),linear-gradient(135deg, var(--color-blue) 0%, var(--color-purple) 100%);
+    background-repeat: repeat;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+}
+
+.top-nav {
+    width: 100%;
+}
+
+.top-nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 66px;
+    padding: 28px 20px;
+    font-size: 0.867rem;
+}
+
+.top-nav ul li {
+    display: inline;
+    list-style: none;
+}
+
+.top-nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 300;
+}
+
+.header-inner-container {
+    padding: 74px 16px 200px 16px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 25px;
+    align-items: center;
+    width: 100%;
+    max-width: 680px;
+    margin: 0 auto;
+}
+
+.header-inner-container p {
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+.top-header::after {
+    content: "";
+    position: absolute;
+    background-image: url("assets/squiggle_line_stripe.svg");
+    width: 66px;
+    height: 107px;
+    display: block;
+    left: calc(50% - 33px);
+    bottom: -20px;
+}
+
+/* --------------- 4.2 Introduction ------------------- */
+
+.hello {
+    text-align: center;
+    position: relative;
+}
+.hello .inner-container {
+    max-width: 680px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.hello .intro-text-normal {
+    font-weight: 400;
+}
+
+.intro-text {
+    font-size: 1.28rem;
+    color: var(--color-purple);
+    line-height: 1.2;
+    font-family: "Merriweather", serif;
+    font-weight: 600;
+    padding-bottom: 1.28rem;
+}
+
+.intro-text:nth-child(3) {
+    padding-bottom: 60px;
+}
+
+
+/* --------------- 4.3 Work ------------------- */
+.work {
+    background: var(--color-lightgray);
+    position: relative;
+}
+.work-image {
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
+    max-width: 100%;
+}
+
+.work article {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 35px;
+}
+
+.work .inner-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.work-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.work-container h2 {
+    color: var(--color-black);
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.work-container h2::after {
+    content: "";
+    width: 57px;
+    height: 6px;
+    display: block;
+    background: url("assets/squiggle_line.svg") no-repeat;
+    position: absolute;
+    bottom: -30px;
+}
+
+.work-link {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: var(--color-purple);
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+}
+
+/* --------------- 4.4 Services ------------------- */
+
+.services{
+    position: relative;
+}
+
+.services article {
+    border: 1px solid var(--color-purple);
+    padding: 35px 30px;
+    flex-basis: 300px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.services article p {
+    color: var(--color-gray);
+    font-size: 0.8rem;
+}
+
+.services article h3 {
+    font-size: 1.2rem;
+}
+
+.services article .image-wrapper {
+    width: 60px;
+}
+
+.services .inner-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    row-gap: 40px;
+}
+
+/* --------------- 4.5 Contact ------------------- */
+
+.contact {
+    background: var(--color-purple);
+    background: url('assets/noise-texture.png'), linear-gradient(135deg, var(--color-blue) 0%, var(--color-purple) 100%);
+    color: #fff;
+}
+
+.contact .inner-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 24px;
+    max-width: 680px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.contact h2 {
+    color: #fff;
+    font-size: 1.8rem;
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 700px;
+    align-items: stretch;
+    gap: 35px;
+}
+
+.contact form label {
+    font-weight: bold;
+    font-size: 0.8rem;
+    text-align: left;
+}
+
+.contact input[type=text], .contact textarea {
+    width: 100%;
+    padding: 16px;
+    font-family: "Roboto", sans-serif;
+    font-size: 0.8rem;
+    color: var(--color-gray);
+    border-radius: 3px;
+    border: none;
+}
+
+.contact label + input,
+.contact label + textarea {
+    margin-top: -32px;
+}
+
+.contact button {
+    align-self: center;
+    padding: 22px 60px;
+}
+
+/* --------------- 4.6 Footer ------------------- */
+
+footer {
+    background: var(--color-black);
+    color: #fff;
+    font-size: 0.8rem;
+    text-align: center;
+    padding: 20px;
+}
+
+/* ------------------------------- 5. Media Queries -------------------------------- */
+
+@media screen and (min-width: 768px) {
+    /*layout kleine tablets*/
+    .work-image {
+        max-width: 100%;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    /*layout desktop*/
+    body {
+        font-size: 17px;
+    }
+
+    .top-nav ul {
+        justify-content: flex-end;
+        padding: 28px 46px;
+    }
+
+    .hello::before, .work::before, .services::before{
+        border-width: 0 100vw 50px 0;
+        top: -50px;
+    }
+    .services::after{
+            bottom:-50px;
+            border-width: 50px 0 0 100vw;
+
+    }
+    .work article {
+        flex-direction: row;
+        gap: 135px;
+        align-items: center;
+    }
+
+    .work .reversed-work {
+        flex-direction: row-reverse;
+    }
+
+    .work .inner-container {
+        padding-right: 46px;
+        padding-left: 46px;
+        gap: 60px;
+    }
+
+    .work-image {
+        max-width: 750px;
+    }
+
+    .services article{
+        flex: 1 1 calc(33.333% - 30px);
+        flex-grow:1;
+    }
+
+    .services .inner-container {
+        padding:100px 112px;
+        gap:30px;
+        align-items:stretch;
+    }
+
+}
